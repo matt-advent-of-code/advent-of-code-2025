@@ -4,14 +4,10 @@ class Dial:
         self.max = max
 
     def rotate_right(self, distance: int):
-        self.position += distance
-        while self.position > self.max:
-            self.position = self.position - self.max - 1
+        self.position = (self.position + distance) % (self.max + 1)
 
     def rotate_left(self, distance: int):
-        self.position -= distance
-        while self.position < 0:
-            self.position = self.max - abs(self.position) + 1
+        self.position = (self.position - distance + (self.max + 1)) % (self.max + 1)
 
 class Instruction:
     def __init__(self, direction: str, distance: int):
