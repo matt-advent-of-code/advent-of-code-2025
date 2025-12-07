@@ -32,17 +32,6 @@ def count_timelines(diagram: str) -> int:
 
     return timeline_count
 
-def split(manifold: [[str]], i: int, j: int) -> int:
-
-    for i in range(i, len(manifold)):
-        for j in range(j, len(manifold)):
-            if  manifold[i - 1][j] == '|' and manifold[i][j] != '^':
-                manifold[i][j] = '|'
-
-
-
-
-
 
 if __name__ == '__main__':
     with open('input.txt') as f:
